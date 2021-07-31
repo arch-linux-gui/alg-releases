@@ -1,6 +1,8 @@
 ### Arch Linux GUI
 
-This is the official ISO building repository for Arch Linux GUI.
+<b>Ready to use Vanilla Arch Linux.</b>
+
+This repository is responisble for the systematic storage/retrieval of Arch Linux GUI releases. Started from v21-08. Older releases have been documental in arch-linux-gui-plasma releases.
 
 unix-name: arch-linux-gui <br>
 Visit the Arch Linux GUI Website: https://archlinuxgui.in/ <br>
