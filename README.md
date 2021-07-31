@@ -15,7 +15,7 @@ You can Download the ISOs from ALG's <a href="https://sourceforge.net/projects/a
 GUI = Graphical User Interface<br>
 This project aims to help people install Arch Linux with a graphical installer, and provide them with a ready to use Arch Linux environment. The project currently has 10 editions featuring various DEs/WMs. There are stock as well as themed editions.
 <pre>
-DE: Plasma5, Gnome40, Xfce4 & Cinnamon5.
+DE: Plasma5, Gnome40, Xfce4 & Cinnamon5, MATE
 WM: i3
 Experimental: Zen
 </pre>
