@@ -40,7 +40,8 @@ The themed editions can be found on the top of the download list. They do not ha
 
 ![xfce-themed](https://raw.githubusercontent.com/arch-linux-gui/artwork/master/desktop-screenshots/ss-with-apps/theme/xfce/xfce4-apps.png)
 
-## B] Pure Editions (User Level: Intermediate, some experiance with Linux, used some Linux Distro before)
+# B] Pure Editions 
+### (User Level: Intermediate, some experiance with Linux, used some Linux Distro before)
 
    The pure editions can be found below the themed editions. They have "pure", in their name. They are basically stock desktop enviroments. Some general Linux knowledge is always helpful to navigate around these editions. They are meant for users who have some Linux experiance on other Linux Distributions and now want to migrate to Arch Linux. Such users can also migrate their systems settings, to Arch Linux.
 
