@@ -20,6 +20,9 @@ The ALG Project offers you, at the moment, 12 editions to choose from. All 12 ed
 * Pure Editions (Total 5 - [Plasma](https://kde.org/plasma-desktop/), [Gnome](), [Cinnamon](https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)), [Xfce](https://www.xfce.org/), [Mate](https://mate-desktop.org/))
 * Window Managers (Total 2 atm - [i3WM](https://i3wm.org/), [BSPWM](https://github.com/baskerville/bspwm))
 
+#### Screenshots:
+Screenshots can be found on the [website](https://archlinuxgui.in/) or in the [artwork repository](https://github.com/arch-linux-gui/artwork).
+
 ![installer on bspwm edition](https://raw.githubusercontent.com/arch-linux-gui/artwork/master/desktop-screenshots/ss-with-apps/theme/bspwm/BSPWM-installer.png)
 
 There are some difference between the 3 categories.
