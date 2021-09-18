@@ -25,7 +25,8 @@ The ALG Project offers you, at the moment, 12 editions to choose from. All 12 ed
 There are some difference between the 3 categories.
 Let's Understand them.
 
-# A] Themed Editions (User Level: Beginner, new to Linux)
+# A] Themed Editions 
+### (User Level: Beginner, new to Linux)
 
 The themed editions can be found on the top of the download list. They do not have the word "pure" in them. They come with all basic setup to help users not only install Vanilla Arch Linux, but also to start using it ASAP, just as they would do with any beginner distributions. These editions come with various applications and settings so that the user can focus on work, and so that the operating system doesn't bother them. Few of the features are listed below.
 
