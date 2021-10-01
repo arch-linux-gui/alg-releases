@@ -41,6 +41,7 @@ The themed editions can be found on the top of the download list. They do not ha
    * Printing Support via CUPS
    * Bluetooth Supporth with GUIs (blueberry, blueman, bluedevil, gnome-bluetooth, depending on DE)
    * Basic System utilities such as calculator, screenshot tool, file browser, terminal etc
+   * Driver Support NVIDIA GPUs
 
 ![xfce-themed](https://raw.githubusercontent.com/arch-linux-gui/artwork/master/desktop-screenshots/ss-with-apps/theme/xfce/xfce4-apps.png)
 
