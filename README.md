@@ -12,7 +12,7 @@ Official Links: [Tutorials](https://youtube.com/c/demonkilleralg), [Support](htt
 
 
 #### GOALS:
-1. Help you install Vanilla Arch Linux, easily via a GUI, and/or
+1. Help you install Vanilla Arch Linux, quickly, offline & easily via a GUI, and/or
 2. Help you use Vanilla Arch Linux by getting you started ASAP, again via GUI(s).
 
 The ALG Project offers you, at the moment, 12 editions to choose from. All 12 editions come with a graphical installer. All 12 editions support encryption via LUKS. These 12 editions are divided into 3 categories:
