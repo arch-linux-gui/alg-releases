@@ -7,7 +7,7 @@ Official Links: [Tutorials](https://youtube.com/c/demonkilleralg), [Support](htt
 
 [![Download Arch Linux GUI](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/p/arch-linux-gui/files)
 
-[![Download Arch Linux GUI](https://img.shields.io/sourceforge/dm/arch-linux-gui.svg)](https://sourceforge.net/projects/arch-linux-gui/files/latest/download) [![License](https://img.shields.io/badge/license-GPLv3-blueviolet)]() [![License](https://img.shields.io/badge/maintained-yes-important)]() 
+[![Download Arch Linux GUI](https://img.shields.io/sourceforge/dm/arch-linux-gui.svg)](https://sourceforge.net/projects/arch-linux-gui/files/stats/timeline) [![License](https://img.shields.io/badge/license-GPLv3-blueviolet)]() [![License](https://img.shields.io/badge/maintained-yes-important)]() 
 
 
 
