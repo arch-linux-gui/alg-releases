@@ -74,4 +74,4 @@ ALG follows a **monthly rolling release cycle** unless otherwise stated. ISOs ar
 The ALG project is distributed FREE OF COST, under the GNU GPLv3 License. You must agree to the terms and conditions of GPLv3. A copy of GPL v3 is provided above.
 
 # Proudly Hosted On:
-[![Download Arch Linux GUI](https://sourceforge.net/sflogo.php?type=14&group_id=3315102)](https://sourceforge.net/) 
+[![Download Arch Linux GUI](https://sourceforge.net/sflogo.php?type=14&group_id=3315102)](https://sourceforge.net/) [![Download Arch Linux GUI](https://osdn.net/sflogo.php?group_id=13109&type=2)](https://osdn.net/)
