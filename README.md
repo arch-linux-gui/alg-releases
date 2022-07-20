@@ -1,6 +1,6 @@
-# Welcome to **Arch Linux GUI**
+# Welcome to **Arka Linux GUI**
 
-###### *ALG = Arch Linux GUI* (this abbreviation shall be used in the rest of the document)
+###### *ALG = Arka Linux GUI* (this abbreviation shall be used in the rest of the document)
 
 
 Official Links: [Tutorials](https://youtube.com/c/demonkilleralg), [Support](https://discord.com/invite/NgAFEw9Tkf), [News](https://t.me/archlinuxgui), [Social](https://www.instagram.com/archlinuxgui/)
