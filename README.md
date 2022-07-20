@@ -16,9 +16,9 @@ Official Links: [Tutorials](https://youtube.com/c/demonkilleralg), [Support](htt
 2. Help you use Vanilla Arch Linux by getting you started ASAP, again via GUI(s).
 
 The ALG Project offers you, at the moment, 12 editions to choose from. All 12 editions come with a graphical installer. All 12 editions support encryption via LUKS. These 12 editions are divided into 3 categories:
-* Themed Editions (Total 5 - Plasma, Gnome, Cinnamon, Xfce, Mate)
-* Pure Editions (Total 5 - [Plasma](https://kde.org/plasma-desktop/), [Gnome](), [Cinnamon](https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)), [Xfce](https://www.xfce.org/), [Mate](https://mate-desktop.org/))
-* Window Managers (Total 2 atm - [i3WM](https://i3wm.org/), [BSPWM](https://github.com/baskerville/bspwm))
+* Themed Editions (Total 5 - Plasma, Gnome, Cinnamon, Xfce)
+* Pure Editions (Total 5 - [Plasma](https://kde.org/plasma-desktop/), [Gnome](), [Xfce](https://www.xfce.org/))
+* Window Managers ([i3WM](https://i3wm.org/))
 
 #### Screenshots:
 Screenshots can be found on the [website](https://archlinuxgui.in/) or in the [artwork repository](https://github.com/arch-linux-gui/artwork).
