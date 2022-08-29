@@ -68,7 +68,7 @@ The themed editions can be found on the top of the download list. They do not ha
 Our goal with Window Managers is to provide users with a little foundation. (Such foundations are already provided by the desktop environments, hence they can be used stock. But for window managers, some foundations should be there from my side, otherwise new users might get overwhelmed). The config files have been written such that a user can build upon what the project provides.
     
 # RELEASE CYCLE: 
-ALG follows a **monthly rolling release cycle** unless otherwise stated. ISOs are updated on the 1st of each month with a possibilty of new editions.
+Project has been discontinued. There might be a chance of reviving it in the future, but for now, the [final release](https://github.com/arch-linux-gui/alg-releases/releases/tag/v2022.07) has been rolled out.
 
 # LICENSE: 
 The ALG project is distributed FREE OF COST, under the GNU GPLv3 License. You must agree to the terms and conditions of GPLv3. A copy of GPL v3 is provided above.
