@@ -1,4 +1,4 @@
-# Welcome to **Arka Linux GUI**
+# Welcome to **ALG**
 
 ###### *ALG = Arka Linux GUI* (this abbreviation shall be used in the rest of the document)
 
