@@ -3,7 +3,7 @@
 ###### *ALG = Arka Linux GUI* (this abbreviation shall be used in the rest of the document)
 
 
-Official Links: [Tutorials](https://youtube.com/c/demonkilleralg), [Support](https://discord.com/invite/NgAFEw9Tkf), [News](https://t.me/archlinuxgui), [Social](https://www.instagram.com/archlinuxgui/)
+Official Links: [Tutorials](https://www.youtube.com/@demonkillerr), [Support](https://discord.com/invite/NgAFEw9Tkf), [News](https://t.me/archlinuxgui), [Social](https://www.instagram.com/archlinuxgui/)
 
 [![Download Arch Linux GUI](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/p/arch-linux-gui/files)
 
