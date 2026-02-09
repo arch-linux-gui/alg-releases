@@ -1,77 +1,98 @@
-# Welcome to **ALG**
+# ALG Release Automation
 
-###### *ALG = Arka Linux GUI* (this abbreviation shall be used in the rest of the document)
+Release automation tool for [Arka Linux GUI](https://arkalinuxgui.org/). Automates ISO building, uploading, checksumming, GitHub releases, and website updates.
 
+## Prerequisites
 
-Official Links: [Tutorials](https://youtube.com/c/demonkilleralg), [Support](https://discord.com/invite/NgAFEw9Tkf), [News](https://t.me/archlinuxgui), [Social](https://www.instagram.com/archlinuxgui/)
+- Arch Linux with `archiso` installed
+- Python 3.10+
+- `rsync`, `ssh` (for SourceForge uploads)
+- `qemu-full` (optional, for VM testing)
 
-[![Download Arch Linux GUI](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/p/arch-linux-gui/files)
+```bash
+pip install -r requirements.txt
+```
 
-[![Download Arch Linux GUI](https://img.shields.io/sourceforge/dm/arch-linux-gui.svg)](https://sourceforge.net/projects/arch-linux-gui/files/stats/timeline) [![License](https://img.shields.io/badge/license-GPLv3-blueviolet)]() [![License](https://img.shields.io/badge/maintained-yes-important)]() 
+## Quick Start
 
+```bash
+# Full release pipeline
+python -m release_tool --all --version 2026.02
 
+# Dry run (no side effects)
+python -m release_tool --all --dry-run
+```
 
-#### GOALS:
-1. Help you install Arch Linux, quickly, offline & easily via a GUI, and/or
-2. Help you use Arch Linux by getting you started ASAP, again via GUI(s).
+## Stages
 
-The ALG Project offers you, at the moment, 8 editions to choose from. All 8 editions come with a graphical installer. All 8 editions support encryption via LUKS. These 12 editions are divided into 3 categories:
-* Themed Editions (Total 4 - Plasma, Gnome, Cinnamon, Xfce)
-* Pure Editions (Total 3 - [Plasma](https://kde.org/plasma-desktop/), [Gnome](), [Xfce](https://www.xfce.org/))
-* Window Managers ([i3WM](https://i3wm.org/))
+Each stage can be run independently or combined. Use `--all` to run everything sequentially.
 
-#### Screenshots:
-Screenshots can be found on the [website](https://archlinuxgui.in/) or in the [artwork repository](https://github.com/arch-linux-gui/artwork).
+| Flag | Stage | Description |
+|------|-------|-------------|
+| `--build` | 1 | Clone/pull edition repos, build ISOs via `mkarchiso` |
+| `--test` | 2 | Pause for manual ISO testing |
+| `--upload` | 3 | Upload ISOs to SourceForge via `rsync` |
+| `--checksum` | 4 | Generate SHA-256 checksums |
+| `--changelog` | 5 | Auto-generate changelog from git commits since last tag |
+| `--github-release` | 6 | Create tagged GitHub release with notes + checksums |
+| `--website` | 7 | PR to update `Isodata.ts` and `ReleasePage.tsx` on web repo |
 
-![installer on bspwm edition](https://raw.githubusercontent.com/arch-linux-gui/artwork/master/desktop-screenshots/ss-with-apps/theme/bspwm/BSPWM-installer.png)
+## Options
 
-There are some difference between the 3 categories.
-Let's Understand them.
+| Flag | Description |
+|------|-------------|
+| `--version VERSION` | Override release version (default: `YYYY.MM` from date) |
+| `--config PATH` | Path to config file (default: `./config.yaml`) |
+| `--dry-run` | Print commands without executing destructive operations |
+| `--qemu` | Launch QEMU VMs for ISO testing (use with `--test`) |
+| `--no-confirm` | Skip confirmation prompts (for scripted/CI use) |
+| `-v, --verbose` | Debug logging |
 
-# A] Themed Editions 
-### (User Level: Beginner, new to Linux)
+## Usage Examples
 
-The themed editions can be found on the top of the download list. They do not have the word "pure" in them. They come with all basic setup to help users not only install Arch Linux, but also to start using it ASAP, just as they would do with any beginner distributions. These editions come with various applications and settings so that the user can focus on work, and so that the operating system doesn't bother them. Few of the features are listed below.
+```bash
+# Build ISOs only
+python -m release_tool --build
 
-   * System Wide Dark Theme (including Firefox Web Browser)
-   * Office Suite with MS fonts support
-   * Media Player (VLC)
-   * Paru, an AUR helper (alongside base-devel, linux-headers and pacman-contrib)
-   * Media Player
-   * Printing Support via CUPS
-   * Bluetooth Supporth with GUIs (blueberry, blueman, bluedevil, gnome-bluetooth, depending on DE)
-   * Basic System utilities such as calculator, screenshot tool, file browser, terminal etc
-   * Driver Support NVIDIA GPUs
+# Build and test with QEMU VMs
+python -m release_tool --build --test --qemu
 
-![xfce-themed](https://raw.githubusercontent.com/arch-linux-gui/artwork/master/desktop-screenshots/ss-with-apps/theme/xfce/xfce4-apps.png)
+# Generate changelog, edit it, then publish
+python -m release_tool --changelog
+vim changelog.txt
+python -m release_tool --github-release --website
 
-# B] Pure Editions 
-### (User Level: Intermediate, some experiance with Linux, used some Linux Distro before)
+# Upload existing ISOs and generate checksums
+python -m release_tool --upload --checksum
 
-   The pure editions can be found below the themed editions. They have "pure", in their name. They are basically stock desktop enviroments. Some general Linux knowledge is always helpful to navigate around these editions. They are meant for users who have some Linux experiance on other Linux Distributions and now want to migrate to Arch Linux. Such users can also migrate their systems settings, to Arch Linux.
+# Everything, no prompts (CI mode)
+python -m release_tool --all --no-confirm --version 2026.02
+```
 
-   These editions are also for those who would like to customize their desktops according to their own needs. These editions hence would require certain efforts to get started. They do not come with any extra application. What applications and settings are to be applied is completely up to the users and I do not make any decision in that. Hence this is the purest form of Vanilla Arch Linux. Something the users would expect after installing their desktops via the regular command line installer.
+## Changelog Workflow
 
-  The pure editions come with these software preinstalled.
-  * File Browser
-  * Text Editor
-  * Terminal Emulator
-  * Screenshot utility
+Stage 5 (`--changelog`) scans all edition repos for git commits since the last tag, categorizes them (Added/Updated/Fixed/Other), and writes `changelog.txt`. This file is editable — refine it before running stages 6 and 7, which consume it for the GitHub release body and website release page entry.
 
-   The user has the FREEDOM and LIBERTY to choose all other software or themes they would like to install and use. This is YOUR personnel setup and the project just provided you with the base system. No BLOAT.
-   
-![xfce-pure](https://raw.githubusercontent.com/arch-linux-gui/artwork/master/desktop-screenshots/ss-with-apps/pure/xfce-pure-apps.png)
+## Configuration
 
-# C] Window Managers 
-###### (User Level: Intermediate to advanced, developers, system administrators, enthusiasts, hobbyists, with experiance of Linux Desktop Environments, wanting a more minimal keyboard oriented operating system)
+Edit `config.yaml` to set:
+- **editions** — repos and ISO name patterns to build
+- **sourceforge** — upload credentials and remote path
+- **github** — release repo, website repo, token env var
+- **qemu** — RAM, CPUs, KVM, UEFI firmware path
+- **paths** — work dir, output dir, changelog location
 
-Our goal with Window Managers is to provide users with a little foundation. (Such foundations are already provided by the desktop environments, hence they can be used stock. But for window managers, some foundations should be there from my side, otherwise new users might get overwhelmed). The config files have been written such that a user can build upon what the project provides.
-    
-# RELEASE CYCLE: 
-Project has been discontinued. There might be a chance of reviving it in the future, but for now, the [final release](https://github.com/arch-linux-gui/alg-releases/releases/tag/v2022.07) has been rolled out.
+The GitHub token is read from the `GITHUB_TOKEN` environment variable (configurable in `config.yaml`).
 
-# LICENSE: 
-The ALG project is distributed FREE OF COST, under the GNU GPLv3 License. You must agree to the terms and conditions of GPLv3. A copy of GPL v3 is provided above.
+## Editions
 
-# Proudly Hosted On:
-[![Download Arch Linux GUI](https://sourceforge.net/sflogo.php?type=14&group_id=3315102)](https://sourceforge.net/) [![Download Arch Linux GUI](https://osdn.net/sflogo.php?group_id=13109&type=2)](https://osdn.net/)
+Currently configured:
+- `alg-plasma` — [arch-linux-gui/alg-plasma](https://github.com/arch-linux-gui/alg-plasma)
+- `alg-gnome` — [arch-linux-gui/alg-gnome](https://github.com/arch-linux-gui/alg-gnome)
+- `alg-xfce` — [arch-linux-gui/alg-xfce](https://github.com/arch-linux-gui/alg-xfce)
+
+Add or remove editions in `config.yaml`.
+
+## License
+
+GPLv3
