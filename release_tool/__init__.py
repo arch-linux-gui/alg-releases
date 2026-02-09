@@ -1,0 +1,1 @@
+"""ALG Release Automation Tool."""

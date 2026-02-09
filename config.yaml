@@ -1,0 +1,59 @@
+# ALG Release Automation Configuration
+# ======================================
+# Edit this file to match your environment before running the release tool.
+
+# Release version format: YYYY.MM (auto-generated if left empty)
+# Override with --version flag on CLI
+release_version: ""
+
+# Editions to build and release
+# Each edition maps to a GitHub repo and an ISO name pattern
+editions:
+  - name: "alg-plasma"
+    repo: "https://github.com/arch-linux-gui/alg-plasma.git"
+    iso_pattern: "alg-plasma-{version}-x86_64.iso"
+
+  - name: "alg-gnome"
+    repo: "https://github.com/arch-linux-gui/alg-gnome.git"
+    iso_pattern: "alg-gnome-{version}-x86_64.iso"
+
+  - name: "alg-xfce"
+    repo: "https://github.com/arch-linux-gui/alg-xfce.git"
+    iso_pattern: "alg-xfce-{version}-x86_64.iso"
+
+# Directories
+paths:
+  # Where edition repos are cloned/pulled
+  work_dir: "./work"
+  # Where built ISOs are placed
+  output_dir: "./out"
+  # Where the changelog is generated
+  changelog_file: "./changelog.txt"
+
+# SourceForge upload settings
+sourceforge:
+  user: "demonkiller"
+  host: "frs.sourceforge.net"
+  remote_path: "/home/frs/project/arch-linux-gui/"
+
+# GitHub settings
+github:
+  # The repository where releases are published
+  releases_repo: "arch-linux-gui/alg-releases"
+  # The website repository to update
+  website_repo: "arch-linux-gui/web"
+  # Branch to create PRs against on the website repo
+  website_branch: "main"
+  # Environment variable name containing the GitHub token
+  token_env_var: "GITHUB_TOKEN"
+
+# QEMU settings for ISO testing (Stage 2)
+qemu:
+  # RAM allocated to the test VM (in MB)
+  ram: 4096
+  # Number of CPU cores for the test VM
+  cpus: 4
+  # Enable KVM acceleration (requires host support)
+  kvm: true
+  # OVMF UEFI firmware path (set to empty string for BIOS boot)
+  ovmf_path: "/usr/share/edk2/x64/OVMF.fd"
